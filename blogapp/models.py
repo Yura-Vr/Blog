@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
@@ -12,3 +13,5 @@ class Post(models.Model):
     datetime = models.DateTimeField()
     category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default="no category")
     
+    def get_absolute_url(self):
+        return reverse("post-details", args=[str(self.id)])
