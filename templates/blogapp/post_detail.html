@@ -1,11 +1,18 @@
 {% extends "layout.html" %}
 
 {% block  content %}
+<div class="content">
 
-{{post.post_header}}
-<br>
-{{post.post_text}}
-<br>
-{{post.author}}
+    <h2>{{post.post_header}}</h2>
+    <br>
+    <div class="post_text">
+        <p>
+            {{post.post_text}}
+        </p>
+        <br>
 
+        <span class="author">{{post.author}}</span>
+    </div>
+
+</div>
 {% endblock   %}
